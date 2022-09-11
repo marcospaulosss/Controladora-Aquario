@@ -23,8 +23,9 @@ char auth[] = BLYNK_AUTH_TOKEN;
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = "MARCOS_PAULO";
-char pass[] = "marcos3891";
+#include "config.h"
+char ssid[] = SECRET_SSID;
+char pass[] = SECRET_PASS;
 
 // Configuração para buscar a data atual
 WiFiUDP ntpUDP;
@@ -300,7 +301,7 @@ void loop()
   Serial.print(":");
   Serial.println(minute);
 
-  Blynk.syncVirtual(V8, V17, V11, V18);
+  Blynk.syncVirtual(V8, V10, V11,  V17, V11, V18, V19, V20);
   hourStopSnack2 = hourStopSnack + 5;
   hourStopSnack3 = hourStopSnack2 + 5;
   if (FORCED == 0 and snack == 0 and snackCorais == 0) {
